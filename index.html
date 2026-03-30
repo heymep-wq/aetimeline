@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE Timeline Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="timeline-container">
+        <div id="timeline-header">
+            <div id="header-right">
+                <span class="comp-name" id="ui-comp-name">(No Comp)</span>
+                <canvas id="time-ruler"></canvas>
+                <div id="playhead-top">
+                    <div class="playhead-head"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="timeline-body">
+            <div id="tracks-panel">
+                <div id="tracks-list">
+                    <div id="playhead-body">
+                        <div class="playhead-line"></div>
+                    </div>
+                    <!-- Track items generated via JS -->
+                </div>
+            </div>
+        </div>
+        
+        <div id="action-tips" style="display: none;">
+            <!-- Context-aware tips injected via JS -->
+        </div>
+        
+    </div>
+
+
+    
+    <!-- Context menus -->
+    <div id="layer-context-menu" class="context-menu" style="display:none;">
+        <div class="menu-item" data-action="new-solid">New Solid...</div>
+        <div class="menu-item" data-action="new-null">New Null Object</div>
+        <div class="menu-item" data-action="new-camera">New Camera</div>
+        <div class="menu-item" data-action="new-text">New Text</div>
+        <div class="menu-separator"></div>
+        <div class="menu-item" data-action="precompose">Pre-compose...</div>
+        <div class="menu-item" data-action="layer-settings">Layer Settings...</div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" style="display:none;"></div>
+    <div id="solid-modal" class="modal" style="display:none;">
+        <div class="modal-title">Solid Settings</div>
+        <div class="modal-body">
+            <label>Name: <input type="text" id="solid-name" value="Deep Cyan Solid 1"></label>
+            <label>Width: <input type="number" id="solid-width" value="1920"></label>
+            <label>Height: <input type="number" id="solid-height" value="1080"></label>
+            <label>Color: <input type="color" id="solid-color" value="#00ffff"></label>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-ok" id="btn-create-solid">OK</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
